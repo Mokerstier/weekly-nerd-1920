@@ -1,0 +1,25 @@
+{
+  "name": "store-data-serverside",
+  "version": "1.0.0",
+  "description": "Example showing how to store data serverside",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mokerstier/weekly-nerd-1920.git"
+  },
+  "keywords": [
+    "JSON",
+    "serverside",
+    "data",
+    "storage"
+  ],
+  "author": "Wouter van der Heijde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mokerstier/weekly-nerd-1920/issues"
+  },
+  "homepage": "https://github.com/Mokerstier/weekly-nerd-1920#readme"
+}
