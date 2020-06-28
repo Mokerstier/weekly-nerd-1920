@@ -23,12 +23,12 @@ app
 routes 
 
     // the route required for the POST request this is the route you post to with your form
-    .post('/form', setJSON.writeData, (req, res) =>{
+    .post('/form', setJSON.writeData, (req, res) =>{ // we call the middleware function, writeData, where we extract our form post
         let data = res.locals.users 
         // This is the unsaved data made available from the writeData function that lives in: 'controllers/setJSON.js'
-        
+        // we will serve the user a list of all users in the data.json
         res.render('pages/userlist.ejs', {
-            users: data.users, // The data is now available on the ejs template
+            users: data.users, // The data is now available on the userlist.ejs
             title: "A list of users"
         })
     })
