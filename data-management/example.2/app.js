@@ -1,8 +1,11 @@
 const express = require('express')
 const routes = express.Router()
-
 const bodyParser = require("body-parser")
 const urlencodedParser = bodyParser.urlencoded({ extended: true })
+
+const setJSON = require('./controllers/setJSON')
+
+let data = require("./data.json")
 
 const config = {
     PORT: 3000
@@ -21,8 +24,7 @@ app
 
 routes  
     // the route required for the POST request this is the route you post to with your form
-    .post('/form', (req, res) =>{
-        console.log(req.body)
+    .post('/form', setJSON.writeData, (req, res) =>{
         res.json(req.body)
     })
 
