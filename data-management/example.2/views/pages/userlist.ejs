@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>title</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <title><%= title %></title>
 </head>
 <body>
+    <% if(users.length >= 0){ %>
+        <h2>Succes!</h2>
+    <% } %>
     <% users.forEach(user => { %>
-        <div>
-        <h3><%= user.firstName%></h3>
-        <h3><%= user.lastName%></h3>    
+        <div class="user-container">
+            <p>User:</p>
+        <h3>First name:<%= user.firstName%></h3>
+        <h3>Last name:<%= user.lastName%></h3>    
         </div>
     <% }) %>
 </body>

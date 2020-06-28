@@ -5,8 +5,6 @@ const urlencodedParser = bodyParser.urlencoded({ extended: true })
 
 const setJSON = require('./controllers/setJSON')
 
-
-
 const config = {
     PORT: 3000
 }
@@ -23,13 +21,14 @@ app
 ;
 
 routes 
- 
+
     // the route required for the POST request this is the route you post to with your form
     .post('/form', setJSON.writeData, (req, res) =>{
-        let data = require("./data.json")
-        console.log(data)
+        let data = res.locals.users 
+        // This is the unsaved data made available from the writeData function that lives in: 'controllers/setJSON.js'
+        
         res.render('pages/userlist.ejs', {
-            users: data.users,
+            users: data.users, // The data is now available on the ejs template
             title: "A list of users"
         })
     })
