@@ -16,12 +16,15 @@ function writeData(req, res, next) {
     contentJSON.users.push(newUser)
 
     // and save the jsonFile again
-    fs.writeFile(jsonFile, JSON.stringify(contentJSON, null, 2), err => { 
+    // this part is a bit cheeky because we actually rewrite the file
+    // with our modified content
+    fs.writeFile(jsonFile, JSON.stringify(contentJSON, null, 2), err => {  
       // these fancy parameters I put in the stringyfy
       // makes sure the data.json gets nicely formatted 
       if (err) console.log(err)
+      next()
     })
-
+    
 
   })
 }

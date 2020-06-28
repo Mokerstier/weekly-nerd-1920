@@ -5,7 +5,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: true })
 
 const setJSON = require('./controllers/setJSON')
 
-let data = require("./data.json")
+
 
 const config = {
     PORT: 3000
@@ -22,15 +22,22 @@ app
     .set('view engine', 'ejs')
 ;
 
-routes  
+routes 
+ 
     // the route required for the POST request this is the route you post to with your form
     .post('/form', setJSON.writeData, (req, res) =>{
-        res.json(req.body)
+        let data = require("./data.json")
+        console.log(data)
+        res.render('pages/userlist.ejs', {
+            users: data.users,
+            title: "A list of users"
+        })
     })
 
-    .get('/', (req, res) =>{
+    // the route to homepage
+    .get('/', (req, res) =>{ 
         res.render("pages/form.ejs", {
-            title: "Store data to server"
+            title: "Store data to server",
         })
     })      
 
