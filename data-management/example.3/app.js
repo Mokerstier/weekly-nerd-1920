@@ -41,7 +41,8 @@ app
     .use(cookieParser())
     
     .use("/register", user) // our special route for registering!
-
+    .use('/', routes)
+    
     .set('view engine', 'ejs')
 
 
