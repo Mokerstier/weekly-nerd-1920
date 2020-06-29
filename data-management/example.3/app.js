@@ -25,11 +25,10 @@ require("dotenv").config()
 const app = express()
 
 const uri = process.env.MONGODB_URI
-const pass = process.env.MONGODB_PASS
 
 mongoose.connect(uri, options)
 mongoose.connection.on("open", function (err, doc) {
-  console.log(`connection established with ${process.env.DB_NAME}`)
+  console.log(`connection established with ${process.env.DB_NAME}-Database`)
   if (err) throw err
 })
 
