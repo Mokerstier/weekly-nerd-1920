@@ -6,6 +6,24 @@
     <title><%= title %></title>
 </head>
 <body>
-    <h1>Save data to a database</h1>
+    <h1>Register a user</h1>
+    <p>And save the user to database</p>
+
+    <form action="/register" method="POST">
+        <fieldset>
+            <legend>Create users and write them to a JSON file</legend>
+            <label for="nickName">First name:</label>
+            <input type="text" name="firstName" id="firstName" />
+    
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            
+          </fieldset>
+    
+          <button type="submit">Make new user</button>
+    </form>
 </body>
 </html>
